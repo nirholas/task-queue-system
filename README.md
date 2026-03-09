@@ -118,6 +118,32 @@ Open VS Code Copilot Chat in the new repo:
 
 The agent reads `TASK-MANIFEST.md`, finds the file path, reads the prompt, executes it.
 
+### Dispatch 100 Chats Fast
+
+Use this exact pattern for high-throughput dispatch:
+
+1. Open as many chats as you want (for example 100).
+2. In each chat, paste exactly one line: `@task-runner <number>`.
+3. Use unique numbers per chat to avoid duplicate work.
+4. Do not paste the whole prompt content manually; the agent resolves the number from `TASK-MANIFEST.md` and reads the task file itself.
+
+Example batch:
+
+```text
+@task-runner 1
+@task-runner 2
+@task-runner 3
+...
+@task-runner 100
+```
+
+Expected behavior per chat:
+- Resolve number -> file path from `TASK-MANIFEST.md`
+- Read full task `.md`
+- Implement all required work
+- Run scoped verification
+- Report completion (and commit/push only if requested)
+
 ### Create New Tasks
 
 ```
@@ -176,10 +202,10 @@ The `@prompt-writer` agent reads this file before creating new prompts, so it wi
 
 ---
 
-## Example: Porting to `demo` Repo
+## Example: Porting to Another Repo
 
 ```bash
-cd /workspaces/demo
+cd /workspaces/target-repo
 
 # Copy core files
 mkdir -p .github/agents
@@ -187,7 +213,7 @@ cp /workspaces/swarms/.github/agents/*.md .github/agents/
 cp /workspaces/swarms/PROMPT-SPEC.md .
 cp /workspaces/swarms/TASK-QUEUE-SYSTEM.md .
 
-# You might already have prompts in demo - generate manifest
+# You might already have prompts in this repo - generate manifest
 echo '# Task Manifest
 
 > Open a chat, type `@task-runner 42` (any number below). Agent reads the file and executes it.

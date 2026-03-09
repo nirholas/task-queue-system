@@ -65,6 +65,7 @@ git push
 - Every prompt must specify: real APIs, real data, real implementations.
 - Always commit and push as `nirholas`.
 - Always use `isBackground: true` for terminals. Always kill terminals after use.
+- Do not instruct task-runner to spawn subagents or delegate implementation.
 - Every prompt must include the terminal and git rules in its Rules section.
 
 ### Template
@@ -79,13 +80,14 @@ Use this exact structure for every prompt file:
 
 ## Rules
 - Work ONLY in `<directory>` — do NOT touch files outside this scope
-- Stay on branch `main` — do NOT create new branches
+- Stay on the currently checked-out branch — do NOT create or switch branches
 - ALWAYS use `isBackground: true` for terminal commands and ALWAYS kill every terminal after getting output
 - Commit and push as `nirholas`:
   git config user.name "nirholas" && git config user.email "nirholas@users.noreply.github.com"
 - TypeScript strict mode — no `any`, no `@ts-ignore`
 - No mocks, no stubs, no placeholder code, no TODOs — full real implementations only
-- Run `npx tsc --noEmit` after TypeScript changes
+- Run scoped verification first (package/app-level checks when available)
+- Do not run full `npx tsc --noEmit` unless explicitly requested by the user for that task
 - Run relevant tests after changes
 
 ## File Ownership

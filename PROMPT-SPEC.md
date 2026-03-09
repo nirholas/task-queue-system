@@ -35,7 +35,9 @@ Where in the repo this work happens. What exists already. What the goal is.
 - TypeScript strict mode — no `any`, no `@ts-ignore`
 - No mocks, no stubs, no placeholder code, no TODOs — full real implementations only
 - Connect to real APIs with real data
-- Run `npx tsc --noEmit` after TypeScript changes
+- Do not spawn subagents or delegate implementation
+- Run scoped verification first (package/app-level checks when available)
+- Do not run full `npx tsc --noEmit` unless explicitly requested by the user for that task
 - Run tests after changes
 
 ## File Ownership
@@ -54,7 +56,12 @@ Numbered list of specific deliverables. Each item should be concrete and verifia
 ## Verification
 Exact commands to verify the task is complete:
 ```bash
-npx tsc --noEmit        # No type errors
+# Prefer scoped checks first (adjust directory to task scope)
+npm -C <task-scope-dir> run typecheck || npm -C <task-scope-dir> run type-check
+
+# Do not run full repo typecheck unless user explicitly asks
+# npx tsc --noEmit
+
 npx vitest run           # Tests pass
 npm run build            # Build succeeds
 ```

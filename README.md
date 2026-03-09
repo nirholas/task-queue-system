@@ -176,10 +176,10 @@ The `@prompt-writer` agent reads this file before creating new prompts, so it wi
 
 ---
 
-## Example: Porting to `sperax` Repo
+## Example: Porting to `demo` Repo
 
 ```bash
-cd /workspaces/sperax
+cd /workspaces/demo
 
 # Copy core files
 mkdir -p .github/agents
@@ -187,7 +187,7 @@ cp /workspaces/swarms/.github/agents/*.md .github/agents/
 cp /workspaces/swarms/PROMPT-SPEC.md .
 cp /workspaces/swarms/TASK-QUEUE-SYSTEM.md .
 
-# You might already have prompts in sperax - generate manifest
+# You might already have prompts in demo - generate manifest
 echo '# Task Manifest
 
 > Open a chat, type `@task-runner 42` (any number below). Agent reads the file and executes it.

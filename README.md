@@ -1,4 +1,4 @@
-# Task Queue System — Portable Installation Guide
+# Task Queue System — Portable Installation Guide 
 
 > **Copy this system to any Git repo to enable numbered task dispatch across 50+ parallel agent chats.**
 

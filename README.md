@@ -34,6 +34,11 @@ cp /path/to/swarms/PROMPT-SPEC.md .
 cp /path/to/swarms/TASK-QUEUE-SYSTEM.md .  # Optional: documentation
 ```
 
+> **Note:** In this standalone repo the documentation file is `README.md` — it is
+> the same content that lives in `swarms` as `TASK-QUEUE-SYSTEM.md`. If you are
+> copying from a clone of this repo rather than from `swarms`, substitute
+> `README.md` wherever the instructions below say `TASK-QUEUE-SYSTEM.md`.
+
 ### 2. Create Your Prompts Directory
 
 ```bash
@@ -387,4 +392,4 @@ ls -la "$(awk -F'|' '/^\| 42 /{gsub(/^ +| +$/,"",$4); print $4}' TASK-MANIFEST.m
 
 This system was built in the `nirholas/swarms` repo. File issues or contribute improvements there.
 
-**License**: MIT (or match the license of the repo you're porting from)
+**License**: See [LICENSE](LICENSE) — Copyright 2026 nirholas, all rights reserved.

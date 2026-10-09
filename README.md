@@ -393,3 +393,7 @@ ls -la "$(awk -F'|' '/^\| 42 /{gsub(/^ +| +$/,"",$4); print $4}' TASK-MANIFEST.m
 This system was built in the `nirholas/swarms` repo. File issues or contribute improvements there.
 
 **License**: See [LICENSE](LICENSE) — Copyright 2026 nirholas, all rights reserved.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=nirholas/task-queue-system&type=Date)](https://www.star-history.com/#nirholas/task-queue-system&Date)

@@ -1,0 +1,16 @@
+{
+  "name": "task-queue",
+  "version": "0.1.0",
+  "description": "Split work into numbered task prompt files with a manifest so many agent chats can each run one by number.",
+  "author": {
+    "name": "nirholas"
+  },
+  "repository": "https://github.com/nirholas/task-queue-system",
+  "homepage": "https://three.ws",
+  "keywords": [
+    "task-queue",
+    "parallel-agents",
+    "prompt-engineering",
+    "workflow"
+  ]
+}

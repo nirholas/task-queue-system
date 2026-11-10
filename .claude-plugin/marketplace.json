@@ -1,0 +1,21 @@
+{
+  "name": "task-queue-system",
+  "owner": {
+    "name": "nirholas"
+  },
+  "description": "Split work into numbered task prompt files with a manifest so many agent chats can each run one by number.",
+  "plugins": [
+    {
+      "name": "task-queue",
+      "source": "./plugins/task-queue",
+      "description": "Split work into numbered task prompt files with a manifest so many agent chats can each run one by number.",
+      "category": "productivity",
+      "tags": [
+        "task-queue",
+        "parallel-agents",
+        "prompt-engineering",
+        "workflow"
+      ]
+    }
+  ]
+}
